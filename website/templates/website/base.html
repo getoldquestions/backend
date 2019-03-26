@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> {% block title %}  {% endblock %} </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--fontaswosome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	
+
+
+	
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+			<div class="container">
+				<a href="" class="navbar-brand text-warning font-weight-bold">GET-GOLD-QUESTIONS</a>
+				<button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#collapsenavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsenavbar">
+					<ul class="navbar-nav text-center  ml-auto">
+						<li class="nav-item"><a href="" class="nav-link text-white"> HOME </a>
+							
+						
+						</li>
+						<li class="nav-item"><a href="#service" class="nav-link text-white"> SEE </a>
+							
+							
+						</li>
+						</li>
+						<li class="nav-item"><a href="#service" class="nav-link text-white"> +2 </a>
+							<ul>
+								<li><a href="#+2">SCIENCE</a></li>
+								<li><a href="#+2">MANAGEMENT</a></li>
+								<li><a href="#+2">OTHER</a>
+								
+</li>
+							</ul>
+
+						
+							
+						</li>
+						<li class="nav-item"><a href="#BACHELOR" class="nav-link text-white"> BACHELOR </a>
+							<ul>
+								<li><a href="#BACHELOR">BScSIT</a></li>
+								<li><a href="#BACHELOR">BBA</a></li>
+								<li><a href="#BACHELOR">BHM</a></li>
+								
+							</ul>
+
+							
+						</li>
+
+						<li class="nav-item"><a href="#ourteam" class="nav-link text-white"> ABOUT US</a>
+							
+						</li>
+						<li class="nav-item"><a href="{% url 'files-view' %}" class="nav-link text-white"> Files </a>
+							
+						</li>
+						{% if user.is_authenticated %}
+						<li class="nav-item"><a href="{% url 'add-file' %}" class="nav-link text-white"> Add Questions </a>
+							
+							</li>
+							<li class="nav-item"><a href="{% url 'message' %}" class="nav-link text-white"> Dashboard </a>
+							
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		{% block body %}
+
+		{% endblock %}
+
+
+<footer class="footer" style="margin-top: 24px">
+		<h6 class="text-center">copyright @ 2019,design by info-media-hub</h6>
+	</footer>
+
+</body>
+</html>
