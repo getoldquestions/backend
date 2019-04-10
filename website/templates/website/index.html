@@ -77,8 +77,8 @@
 
 					
 				</div>
-				<h2>E-Book</h2>
-				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
+				<h2>11</h2>
+				<h3><a class="btn btn-dark text-white btn lg" href="{% url 'plus-2' %}">CLICK</a></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
@@ -86,7 +86,7 @@
 
 					
 				</div>
-				<h2>Old Question</h2>
+				<h2>12</h2>
 				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
@@ -95,7 +95,7 @@
 
 					
 				</div>
-				<h2>Extra Material</h2>
+				<h2>Arts</h2>
 				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
@@ -111,8 +111,8 @@
 
 					
 				</div>
-				<h2>E-Book</h2>
-				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
+				<h2>BScCSIT</h2>
+				<h3><a class="btn btn-dark text-white btn lg" href="{% url 'semester' %}">CLICK</a></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
@@ -120,7 +120,7 @@
 
 					
 				</div>
-				<h2>Old Question</h2>
+				<h2>BBA</h2>
 				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
@@ -129,7 +129,7 @@
 
 					
 				</div>
-				<h2>Extra Material</h2>
+				<h2>BBS</h2>
 				<h3><button class="btn btn-dark text-white btn lg">CLICK</button></h3>
 				<h6>text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popular</h6>
 			</div>
@@ -139,54 +139,7 @@
 
 </div>
 	
-	<section class="ourteam "  id= "ourteam">
-		<div class="container text-center">
-			<h1>ABOUT US</h1>
-			<p>This is the best combaintion of the ITcian group Of Csit nepal</p>
-			<div class="row teamsetting">
-				<div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
-					<figure class="figure">
-						<img src="{% static 'website/images/pro.jpg' %}" class="figure-img img-fluid rounded-circle" height="200px" width="200px">
-						<ficaption>
-							<h4>Prabin shrestha</h4>
-							<p class="figure-caption">Founder/CEO</p>
-							<h5>@Prabin shrestha is the recent<br>
-							   sytem analyst and manager of<br>
-							    Dark-media Lvt.com and have<br>
-							    full experience python django</h5>
-
-
-					</figure>
-			</div>
-				<div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
-					<figure class="figure">
-						<img src="{% static 'website/images/zuck.jpg' %}" class="figure-img img-fluid rounded-circle" height="200px" width="200px">
-						<ficaption>
-							<h4>Biplov </h4>
-							<p class="figure-caption">AI developer</p>
-							<h5>@Biplov Sharma is the recent<br>
-							   sytem analyst and manager of<br>
-							    Dark-media Lvt.com and have<br>
-							    full experience web development</h5>
-
-					</figure>
-			</div>
-			
-			<div class="col-lg-4 col-md-4 col-sm-10 col-12 d-block m-auto">
-					<figure class="figure">
-						<img src="{% static 'website/images/kk.jpg' %}" class="figure-img img-fluid rounded-circle" height="200px" width="200px">
-						<ficaption>
-							<h4>Ravi Thekare</h4>
-							<p class="figure-caption">fullstack Developer</p>
-							<h5> @Ravi Thekare is the recent<br>
-							   fullstack developer & SEO manager<br>
-							    work on nepal turisum bord lpt.c<br>
-							    ffull experience web development</h5>
-
-
-					</figure>
-			</div>
-	</section>
+	
 <div class="image">
 
 	<section class=" container contact text-center" id="ct-us">
@@ -194,13 +147,17 @@
 	<div class="contact-form">
 		<form method="POST" action="{% url 'contact' %}">
 			{% csrf_token %}
-			<input type="text" name="name" placeholder="your Name" required>
+	    <!--   <input type="text" name="name" placeholder="your Name" required>
 			
 			
 				
 			<<input type="email" name="email" placeholder="your Email" required>
 				
-			<textarea name="message" placeholder="your message" required></textarea>
+			<textarea name="message" placeholder="your message" required></textarea> <br>
+
+		-->
+
+			{{ form }}
 			<button class="btn btn-dark text-white btn lg">SUBMIT</button>
 
 

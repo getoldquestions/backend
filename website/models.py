@@ -16,8 +16,10 @@ class Contact(models.Model):
 class Questions(models.Model):
 	name = models.CharField(max_length=125)
 	level = models.CharField(max_length=75)
-	semester = models.CharField(max_length=75)
+	year = models.IntegerField()
 	faculty = models.CharField(max_length=75)
+	semester = models.IntegerField()
+	subject = models.CharField(max_length=100)
 	date_posted = models.DateTimeField(default=timezone.now)
 	file = models.FileField()
 
