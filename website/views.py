@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Contact, Questions
+from .models import Contact, Questions, Subject, QuestionFiles
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .forms import ContactForm
@@ -68,6 +68,92 @@ class FileCreate(LoginRequiredMixin, CreateView):
 	redirect_field_name = "hollaback"
 	raise_exception = False
 
+#View that deals with adding subject information
+class SubjectCreateView(LoginRequiredMixin, CreateView):
+	model = Subject
+	fields = ['sName', 'level','faculty', 'semester'] 
+	login_url = "/admin/login"
+	redirect_field_name = "hollaback"
+	raise_exception = False
+	success_url = reverse_lazy("add-sub")
+
+
+#View to handle adding queston paper files
+class QuestionsCreateView(LoginRequiredMixin, CreateView):
+	model = QuestionFiles
+	fields = ['sName', 'year', 'file', 'date_posted']
+	login_url = "/admin/login"
+	redirect_field_name = "hollaback"
+	raise_exception = False
+	success_url = reverse_lazy("add-ques")
+
+#View to handle viewing question of +2 Science/commerce
+class Science11q(ListView):
+	queryset = Subject.objects.filter(level = "11").filter(faculty = "Science")
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+class Science12q(ListView):
+	queryset = Subject.objects.filter(level = "12").filter(faculty = "Science")
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+class Commerce11q(ListView):
+	queryset = Subject.objects.filter(level = "11").filter(faculty = "Commerce")
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+class Commerce12q(ListView):
+	queryset = Subject.objects.filter(level = "12").filter(faculty = "Commerce")
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+
+class Csit1q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 1)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+class Csit2q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 2)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+class Csit3q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 3)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+class Csit4q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 4)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+class Csit5q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 5)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+class Csit6q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 6)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+class Csit7q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 7)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+class Csit8q(ListView):
+	queryset = Subject.objects.filter(level = "Bachelors").filter(faculty = "CSIT").filter(semester = 8)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
+
+
 class FilesView(ListView):
 	model = Questions
 	template_name = "website/files.html"
@@ -88,10 +174,9 @@ def plus2(request):
 	return render(request, 'website/+2.html')
 
 class questionsView(ListView):
-	model = Questions
-	template_name = 'website/files+2.html'
-	context_object_name= 'files'
-	ordering = ['-date_posted']
+	queryset = Subject.objects.filter(level = "Bachelors").filter(semester = 5)
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
 
 	
 class semesterView(ListView):

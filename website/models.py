@@ -28,3 +28,22 @@ class Questions(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class Subject(models.Model):
+	sName = models.CharField(max_length=75)
+	level = models.CharField(max_length=75)
+	faculty = models.CharField(max_length=75)
+	semester = models.IntegerField(null=True, blank =True)
+
+
+	def __str__(self):
+		return self.sName
+
+class QuestionFiles(models.Model):
+	sName = models.ForeignKey(Subject, on_delete= models.CASCADE)
+	year = models.IntegerField()
+	date_posted = models.DateTimeField(default=timezone.now)
+	file = models.FileField()
+
+	def __str__(self):
+		return self.sName.sName
