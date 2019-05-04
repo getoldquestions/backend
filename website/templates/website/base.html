@@ -39,40 +39,26 @@
 							
 						
 						</li>
-						<li class="nav-item"><a href="#service" class="nav-link text-white"> SEE </a>
+						<li class="nav-item"><a href="{% url 'index' %}#see" class="nav-link text-white"> SEE </a>
 							
 							
 						</li>
 						</li>
-						<li class="nav-item"><a href="#service" class="nav-link text-white"> +2 </a>
-							<ul>
-								<li><a href="#+2">SCIENCE</a></li>
-								<li><a href="#+2">MANAGEMENT</a></li>
-								<li><a href="#+2">OTHER</a>
-								
-</li>
-							</ul>
+						<li class="nav-item"><a href="{% url 'index' %}#+2" class="nav-link text-white"> +2 </a>
+							
 
 						
 							
 						</li>
-						<li class="nav-item"><a href="#BACHELOR" class="nav-link text-white"> BACHELOR </a>
-							<ul>
-								<li><a href="#BACHELOR">BScSIT</a></li>
-								<li><a href="#BACHELOR">BBA</a></li>
-								<li><a href="#BACHELOR">BHM</a></li>
-								
-							</ul>
+						<li class="nav-item"><a href="{% url 'index' %}#BACHELOR" class="nav-link text-white"> BACHELOR </a>
+							
 
 							
 						</li>
 
-						<li class="nav-item"><a href="#ourteam" class="nav-link text-white"> ABOUT US</a>
+						<li class="nav-item"><a href="{% url 'index' %}#contact" class="nav-link text-white"> CONTACT US</a>
 							
-						</li>
-						<li class="nav-item"><a href="{% url 'files-view' %}" class="nav-link text-white"> Files </a>
-							
-						</li>
+						
 						{% if user.is_authenticated %}
 						<li class="nav-item"><a href="{% url 'add-file' %}" class="nav-link text-white"> Add Questions </a>
 							

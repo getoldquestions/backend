@@ -87,6 +87,12 @@ class QuestionsCreateView(LoginRequiredMixin, CreateView):
 	raise_exception = False
 	success_url = reverse_lazy("add-ques")
 
+
+class seeq(ListView):
+	queryset = Subject.objects.filter(level = "SEE")
+	template_name = 'website/questions.html'
+	context_object_name= 'subjects'
+
 #View to handle viewing question of +2 Science/commerce
 class Science11q(ListView):
 	queryset = Subject.objects.filter(level = "11").filter(faculty = "Science")
@@ -186,6 +192,11 @@ class semesterView(ListView):
 def semdetailView(request):
 	return render(request, 'website/sems')
 
+def csitsem(request):
+	return render(request,'website/sems.html' )
+
+def bbasem(request):
+	return render(request, 'website/bbasem.html')
 
 
 
